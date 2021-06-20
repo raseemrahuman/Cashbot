@@ -1,0 +1,23 @@
+#third{
+  background: url("{% static 'images/Bannar1.jpg' %}") 50% 0 no-repeat fixed;
+  color: black;
+  height: 650px;
+  padding: 100px 0 0 0;   
+  }
+        
+        
+        
+        
+        
+        #bg {
+          height: 100vh;
+        }
+  
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+          #intro {
+            margin-top: -58.59px;
+          }
+        }
+
+

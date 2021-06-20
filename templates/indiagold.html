@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <title>{{Abttitle}}</title>
+</head>   
+<style>
+  /* Background image css - Large screen */
+   @media only screen and (min-width: 400px) {
+    body{
+      background-image: url("{% static 'images/Illus.jpg' %}");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;   
+    }
+  }
+    /* Background image css for phone styles */
+    @media screen and (max-width: 479px) {
+      body{
+      background-image: url("{% static 'images/mob.jpg' %}");
+      background-repeat: no-repeat; 
+      background-position: center;
+      background-attachment: fixed;
+      background-size: cover;  
+    }
+  }
+  * {
+  box-sizing: border-box;
+}
+
+.container-fluid-body{
+  width: 95%;
+  height: 550px;
+  background: #fff;
+  margin: 14px auto;
+  border: 1px solid #fff;
+}
+
+.main {
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+}
+
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 50%;
+  padding: 0 7px;
+  margin-top: 2px;
+  text-align: center;
+}
+.righttext{
+  text-align: left;
+  margin-left: 10px;
+}
+
+.clip-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .main, .right {
+    width: 100%;
+  }
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+.col-25text {
+  float: left;
+  width: 75%;
+  margin-top: 0px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/*start of image*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  float :left;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*End of Image*/
+
+</style> 
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:8000">
+          Insta_cash_bot
+        </a>
+      </div>
+    </nav>
+    <div class="container-fluid-body">
+    <div class="main">
+      <h3>Insta Cash Bot (India Gold)</h3>
+      <div class="clip-container"> 
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div><br>
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 2</div>
+          <p><a href="https://tsu.onelink.me/znrO/861b328d"><img src="{% static 'images/Bannar3.jpg' %}" style="width:100%" alt="My image"></a></p>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 2</div>
+         <p><a href="https://tsu.onelink.me/znrO/861b328d"><img src="{% static 'images/proof.jpg' %}" style="width:100%" alt="My image"></a></p>
+        </div>  
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span>  
+        </div>
+      </div>
+    </div>
+    <div class="right"> 
+      <h4>Install,Register & Get Rs.5 Paytm Cash within 24 Hours</h4>
+      <div class ="righttext">
+        <p><ol>
+            <li>Click here for <a href="https://app.indiagold.co/referral/TGiSyQDfjgzZKgah8" target="_blank">Install</a> </li>
+            <li>Valid only for New User only</li>
+            <li>Enter your Paytm Number Below.</li>
+            <li>Enter the user name in India Gold App Below.</li>
+            <li>Attach the screenshot with username in India Gold App and click on SUBMIT.</li>
+        </ol></p>
+      </div>
+      <div class="container">
+        <form action="fileuploaded" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Paytm Number</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="paytmno" placeholder="Enter Your Paytm Number.." required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">User Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" name="name" required placeholder="Enter the user name in Partner App">
+            </div>
+          </div>
+          <div class="row">
+          <div class="col">
+                <br>
+                <input type="file" id="files" name="files[]" required>
+                <input type="hidden" name="url" id="url">
+                <p></p>
+                <p id="precent"><button type="button" onclick="uploadimage()" required>Upload</button></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25t">
+              <label for="subject">Click on submit</label>
+            </div>
+          </div>
+          <div class="row">
+             <input type="submit" value="Submit"> 
+          </div>
+        </form>
+      </div>
+      <!-- <br> -->
+    </div>
+  </div>
+</div>    
+<script>
+  var slideIndex = 0;
+  showSlides();
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2600); // Change image every 2 seconds
+  }
+  </script>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.6.4/firebase.js"></script>
+<script>
+// Set the configuration for your app
+// TODO: Replace with your app's config object
+var firebaseConfig = {
+  apiKey: "AIzaSyDeKkMtloXQVu-ZBYwyIPjbT2-11Ph-TWQ",
+  authDomain: "instacashbot.firebaseapp.com",
+  databaseURL: "https://instacashbot-default-rtdb.asia-southeast1.firebasedatabase.app",
+  storageBucket: "instacashbot.appspot.com"
+};
+firebase.initializeApp(firebaseConfig);
+     
+//Get a reference to the storage service, which is used to create references in your storage bucket
+function uploadimage(){
+        
+        var storage = firebase.storage();
+
+        var file = document.getElementById("files").files[0];
+
+        var storageRef = storage.ref();
+
+        var  thisref = storageRef.child(file.name).put(file);
+        thisref.on('state_changed',function(snapshot){
+          var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+          var cal = (progress);
+          document.getElementById("precent").innerHTML = ("upload:" + cal.toPrecision(4)+ "% done");
+          console.log('Upload is ' + progress + '% done');
+          // console.log("file uploading....");
+        },
+        function(error){
+
+        },
+        function() {
+           thisref.snapshot.ref.getDownloadURL().then((downloadURL) => {
+           console.log('File available at', downloadURL);
+           alert("File upload sucessfully");
+           document.getElementById("url").value = downloadURL;
+          });
+        });
+      }        
+</script>
+</html>
